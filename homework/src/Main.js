@@ -18,7 +18,7 @@ const Main = (props) => {
   const [avg, setAvg] = React.useState(avgNum.toFixed(1));
   //const [data, data를 변경시킬함수] = React.useState(초기값(0 or "" or [])); -> useState 이용해서 계속 변화하는 평균값 넣어줌
   // avg로 data지정, 변경시킬 함수는 주로 data 앞에 set을 붙임 setAvg/ React.useState로 훅 사용/초기값은 지금 화면의 값들의 평균값인 avgNum넣고 .toFixed(1)로 소수점 아래 1자리까지 출력!
-  const reset = () => setAvg(0.0);
+  const reset = () => setAvg("0.0");
   //버튼 누르면 실행될 reset함수/ setAvg(0.0)으로 바꿔줌!
 
   return (
@@ -29,7 +29,7 @@ const Main = (props) => {
         //map()함수를 통해 days_list의 내용물을 아래 모양으로 나열해줌(생성)!
         //item에 key 넣어줘야함!
         return (
-          <WrapCompoent>
+          <WrapComponent>
             <MiniTitle key={id}>{list}</MiniTitle>
             <>
               {/* 리턴 2개면 안되서 빈배열 넣어주기! */}
@@ -52,7 +52,7 @@ const Main = (props) => {
               {/* 링크를 이용하여 세모 눌렀을 때 id값 파라미터로 주면서 /detail로 이동 */}
               <Triangle></Triangle>
             </Link>
-          </WrapCompoent>
+          </WrapComponent>
         );
       })}
       <AverageBox>
@@ -79,7 +79,7 @@ const Wrap = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
 `;
-const WrapCompoent = styled.div`
+const WrapComponent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
